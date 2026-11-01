@@ -342,3 +342,4 @@ karibu_backend/
 └── .env.example
 ```
 # karibu_backend
+# karibu
