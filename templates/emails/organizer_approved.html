@@ -1,0 +1,9 @@
+{% extends "emails/base.html" %}
+{% block content %}
+<h2>You're Approved! Start Creating Events ✅</h2>
+<p>Great news, <strong>{{ user.first_name }}</strong>! Your organizer account for <strong>{{ organization_name }}</strong> has been approved.</p>
+<p>You can now log in and start creating events on Karibu.</p>
+<div style="text-align:center; margin: 32px 0;">
+  <a href="{{ frontend_url }}/organizer/events/create" class="btn">Create Your First Event</a>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "emails/base.html" %}
+{% block content %}
+<h2>Event Requires Updates</h2>
+<p>Hi {{ user.first_name }}, your event <strong>{{ event.title }}</strong> requires some updates before it can be published.</p>
+{% if reason %}
+<div class="detail-box">
+  <p style="margin:0; font-size:14px;"><strong>Reason:</strong> {{ reason }}</p>
+</div>
+{% endif %}
+<p>Please update your event and resubmit for review.</p>
+<div style="text-align:center; margin: 24px 0;">
+  <a href="{{ frontend_url }}/organizer/events/{{ event.id }}" class="btn">Update Event</a>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "emails/base.html" %}
+{% block content %}
+<h2>Organizer Application Received, {{ user.first_name }}!</h2>
+<p>Thank you for applying to become an event organizer on Karibu. We've received your application for <strong>{{ organization_name }}</strong>.</p>
+<div class="detail-box">
+  <div class="detail-row">
+    <span class="detail-label">Organization</span>
+    <span class="detail-value">{{ organization_name }}</span>
+  </div>
+  <div class="detail-row">
+    <span class="detail-label">Status</span>
+    <span class="detail-value"><span class="badge badge-yellow">Pending Review</span></span>
+  </div>
+</div>
+<p>Our team will review your application and notify you within <strong>1–2 business days</strong>.</p>
+{% endblock %}

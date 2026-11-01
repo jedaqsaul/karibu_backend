@@ -1,0 +1,26 @@
+{% extends "emails/base.html" %}
+{% block content %}
+<h2>Your Event is Live! 🎊</h2>
+<p>Hi {{ user.first_name }}, your event has been approved and is now published on Karibu.</p>
+<div class="detail-box">
+  <div class="detail-row">
+    <span class="detail-label">Event</span>
+    <span class="detail-value">{{ event.title }}</span>
+  </div>
+  <div class="detail-row">
+    <span class="detail-label">Date</span>
+    <span class="detail-value">{{ event.start_datetime|date:"D, d M Y" }}</span>
+  </div>
+  <div class="detail-row">
+    <span class="detail-label">Venue</span>
+    <span class="detail-value">{{ event.venue }}, {{ event.city }}</span>
+  </div>
+  <div class="detail-row">
+    <span class="detail-label">Status</span>
+    <span class="detail-value"><span class="badge badge-green">Published</span></span>
+  </div>
+</div>
+<div style="text-align:center; margin: 24px 0;">
+  <a href="{{ frontend_url }}/events/{{ event.slug }}" class="btn">View Your Event</a>
+</div>
+{% endblock %}

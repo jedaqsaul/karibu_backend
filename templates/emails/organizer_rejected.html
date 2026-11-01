@@ -1,0 +1,14 @@
+{% extends "emails/base.html" %}
+{% block content %}
+<h2>Update on Your Organizer Application</h2>
+<p>Hi {{ user.first_name }}, we've reviewed your application for <strong>{{ organization_name }}</strong> and are unable to approve it at this time.</p>
+{% if reason %}
+<div class="detail-box">
+  <p style="margin:0; font-size:14px;"><strong>Reason:</strong> {{ reason }}</p>
+</div>
+{% endif %}
+<p>If you believe this is an error or have addressed the concerns, please contact us.</p>
+<div style="text-align:center; margin: 24px 0;">
+  <a href="mailto:support@karibu.co.ke" class="btn btn-secondary">Contact Support</a>
+</div>
+{% endblock %}

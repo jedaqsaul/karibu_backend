@@ -1,0 +1,17 @@
+{% extends "emails/base.html" %}
+{% block content %}
+<h2>Ticket Cancelled</h2>
+<p>Hi {{ user.first_name }}, your ticket for <strong>{{ event.title }}</strong> has been cancelled.</p>
+<div class="detail-box">
+  <div class="detail-row">
+    <span class="detail-label">Ticket No.</span>
+    <span class="detail-value">{{ ticket.ticket_number }}</span>
+  </div>
+  <div class="detail-row">
+    <span class="detail-label">Status</span>
+    <span class="detail-value"><span class="badge badge-red">Cancelled</span></span>
+  </div>
+</div>
+{% if reason %}<p><strong>Reason:</strong> {{ reason }}</p>{% endif %}
+<p>If you did not request this cancellation, please contact support immediately.</p>
+{% endblock %}
